@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 
 function App() {
-  const [val, setVal] = useState({ Name: "Manish", isBanned: false });
+  const [val, setVal] = useState([1, 2, 3, 4, 5, 6]);
   return (
-    <div className="p-4">
-      <h1>name : {val.Name}</h1>
-      <h2>banned: {val.isBanned.toString()}</h2>
+    <div className="p-5">
+      {val.map((item) => (
+        <h1>{item}</h1>
+      ))}
       <button
-        onClick={() => setVal({ ...val, isBanned: !val.isBanned })}
-        className="px-3 py-1 bg-green-400 rounded-full text-white"
+        onClick={() =>
+          setVal(() =>val.filter((iten, index)=>index != val.length-1))
+        }
+        className="px-2 py-1 text-xs text-white rounded-full bg-pink-400"
       >
-        change
+        click
       </button>
     </div>
   );
@@ -19,7 +22,43 @@ function App() {
 export default App;
 
 {
-  /* 1.basic level useState
+  /*  add another value  5. import React, { useState } from "react";
+
+function App() {
+  const [val, setVal] = useState({ name: "kuchalia", age: 22 });
+  return (
+    <div>
+      <button onClick={ () => {
+         setVal({ ...val, gender: "male" }) 
+         console.log(val)}}>click</button>
+    </div>
+  );
+}
+
+export default App;
+  
+  // 4. useState mastering like to change the btn color change 
+   import React, { useState } from "react";
+
+function App() {
+  const [val, setVal] = useState({ Name: "Manish", isBanned: false });
+  return (
+    <div className="p-4">
+      <h1>name : {val.Name}</h1>
+      <h2>banned: {val.isBanned.toString()}</h2>
+      <button
+        onClick={() => setVal({ ...val, isBanned: !val.isBanned })} 
+        
+        className={`px-3 py-1 ${val.isBanned ? "bg-blue-500" : "bg-red-500"}  rounded-full text-xs text-white`}
+      >
+        change
+      </button>
+    </div>
+  );
+}
+
+export default App;
+   1.basic level useState
   <div className="p-4">
       <h1>{banned.toString()}</h1>
       <button onClick={() =>setBanned(!banned)} className=" px-2 py-1 mt-2 rounded bg-blue-500 text-white">Do it ban</button>
