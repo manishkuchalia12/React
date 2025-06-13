@@ -1,4 +1,18 @@
-import React, { useState } from "react";
+import React from 'react'
+import Song from './Components/Song'
+
+
+function App() {
+  return (
+    <Song/>
+  )
+}
+
+export default App
+
+{
+  /* 6. useState working on array 
+  import React, { useState } from "react";
 
 function App() {
   const [val, setVal] = useState([1, 2, 3, 4, 5, 6]);
@@ -19,10 +33,8 @@ function App() {
   );
 }
 
-export default App;
-
-{
-  /*  add another value  5. import React, { useState } from "react";
+export default App; 
+   5.add another value  5. import React, { useState } from "react";
 
 function App() {
   const [val, setVal] = useState({ name: "kuchalia", age: 22 });
