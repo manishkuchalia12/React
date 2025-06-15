@@ -1,10 +1,14 @@
 import React from 'react'
-import Song from './Components/Song'
+import Hero from './Components/Hero'
 
 
 function App() {
   return (
-    <Song/>
+     <div>
+    <Hero text='know More'color="bg-green-700"/>
+    <Hero text='Download'color="bg-red-700"/>
+  </div>
+  
   )
 }
 

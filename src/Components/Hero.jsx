@@ -1,9 +1,13 @@
 import React from 'react'
 
-function Hero() {
+function Hero({text,color}) {
   return (
-    <h1>Hero</h1>
+    <button className={`px-3  py-1 m-2  ${color} rounded text-white`}>{text} </button>
   )
 }
 
-export default Hero
+export default Hero;
+
+
+
+// understand the props 
