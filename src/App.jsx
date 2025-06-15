@@ -1,8 +1,64 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Hero from './Components/Hero'
 
 
 function App() {
+ const data = [
+  {
+    name: "John",
+    profession: "Engineer",
+    image: "https://media.istockphoto.com/id/2163867926/photo/hospital-doctor-using-spreadsheet-for-billing-codes-on-desktop.webp?a=1&b=1&s=612x612&w=0&k=20&c=B0Hc29mEPGqj78OFi57emvJoprCUq6SmlMF8TGUHcK8=",
+    friends: false,
+  },
+  {
+    name: "Sara",
+    profession: "Doctor",
+    image: "https://images.unsplash.com/photo-1744124371841-d2723e438bdf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8"
+  ,friends: false,
+  },
+  {
+    name: "Mike",
+    profession: "Photographer",
+    image: "https://images.unsplash.com/photo-1748837153878-eb127737c417?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D"
+     ,friends: false,
+  },
+  {
+    name: "Emma",
+    profession: "Artist",
+    image: "https://images.unsplash.com/photo-1749843990645-e3f0c3e02a1a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMnx8fGVufDB8fHx8fA%3D%3D"
+   ,friends: false,},
+
+];
+
+ const [realdata, setRealData]= useState(data);
+
+
+
+  return (
+    <>
+    <div className='w-full h-screen bg-zinc-400 flex gap-4 items-center justify-center'>
+    {realdata.map((item,index)=>(
+       
+        <Hero key={index}values={item} />
+         
+      ))}
+    
+    </div>
+    </>
+  
+  )
+}
+
+export default App
+
+{
+
+   
+  /*8. <Hero image={item.image} name={item.name} profession={item.profession} /> 
+          instead we using    <Hero values={item} />
+  
+  7. props
+  function App() {
   return (
      <div>
     <Hero text='know More'color="bg-green-700"/>
@@ -11,11 +67,7 @@ function App() {
   
   )
 }
-
-export default App
-
-{
-  /* 6. useState working on array 
+  6. useState working on array 
   import React, { useState } from "react";
 
 function App() {
